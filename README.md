@@ -8,6 +8,8 @@
 
 ###Association
 - has_many :groups, through: :members
+- has many :members
+- has_many :messages
 
 ## groupテーブル
 |Column|Type|Options|
@@ -16,6 +18,8 @@
 
 ### Association
 - has_many :users, through: :members
+- has many :members
+- has_many :messages
 
 ## membersテーブル
 
