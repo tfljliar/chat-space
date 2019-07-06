@@ -4,7 +4,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|mail|string|null: false|
+|mail|string|null: false, unique: true|
 
 ###Association
 - has_many :groups, through: :members
