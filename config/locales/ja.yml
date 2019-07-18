@@ -4,6 +4,6 @@ ja:
     errors:
       models:
         group:
-      attributes:
-        name: 
-          blank: 名前を入力してください
+          attributes:
+            name: 
+              blank: 名前を入力してください
