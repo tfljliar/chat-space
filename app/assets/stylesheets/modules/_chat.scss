@@ -34,13 +34,13 @@
       line-height: 40px;
     }
   }
-  .contents{
+  .messages{
     height: calc(100% - 100px - 136px);
     background-color: #fafafa;
     padding: 46px 40px 0;
-    .content{
+    .message{
       padding-bottom: 40px;
-      .upper-content{
+      .upper-message{
         display: flex;
         flex-direction: row;
         padding-bottom: 10px;
@@ -55,7 +55,7 @@
           color: #999999;
         }
       }
-      .lower-content{
+      .lower-message{
         font-size: 14px;
         color: #434a54;
       }
