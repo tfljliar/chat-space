@@ -1,0 +1,9 @@
+#保留
+ja:
+  activerecord:
+    errors:
+      models:
+        group:
+          attributes:
+            name: 
+              blank: 名前を入力してください

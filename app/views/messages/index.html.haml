@@ -4,46 +4,20 @@
     .header
       .left-header
         .left-header__title
-          グループ名
+          name
         %ul.left-header__members
           Member:
           %li.member
             ユーザー
-          %li.member
-            ユーザー
-          %li.member
-            ユーザー
       .right-header
         Edit
-    .contents
-      .content
-        .upper-content
-          .upper-content__user
-            user
-          .upper-content__date
-            2019-7-12 07:15:50 UTC
-        .lower-content
-          hello
-      .content
-        .upper-content
-          .upper-content__user
-            user
-          .upper-content__date
-            2019-7-12 07:15:50 UTC
-        .lower-content
-          hello
-      .content
-        .upper-content
-          .upper-content__user
-            user
-          .upper-content__date
-            2019-7-12 07:15:50 UTC
-        .lower-content
-          hello
-    %form.form
-      %input.form__message
-      .form__picture
-        %label.form__picture__image
-          = fa_icon "picture-o",class: "icon"
-          %input.hidden{type: "file"}
-      %input.form__submit{type:"submit", value:"Send"}
+    .messages
+      = render partial: 'message', collection: @messages
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :body, class: 'form__message', placeholder: 'type a message'
+        .form__picture
+          = f.label :image, class: 'form__picture__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
