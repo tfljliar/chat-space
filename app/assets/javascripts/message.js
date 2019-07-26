@@ -20,7 +20,7 @@ $(function(){
     return html;
   }
   function ScrollToNewMessage(){
-    $('.message').animate({scrollTop: $('.message')[0].scrollHeight},'fast');
+    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight},'fast');
   }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
@@ -38,11 +38,14 @@ $(function(){
       var html = buildHTML(data);
       $('.messages').append(html);
       ScrollToNewMessage();
-	  	$('.form__message').val('');
 	  	$('.form__submit').prop('disabled', false);
+      $('#new_message')[0].reset();
 	  })
     .fail(function(){
       alert('error');
+    })
+    .always(function(){
+      $('.form__submit').prop('disabled', false);
     })
   });
 });
