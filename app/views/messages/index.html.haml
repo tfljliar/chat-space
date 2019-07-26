@@ -1,23 +1,7 @@
 .wrapper
   = render 'shared/side_bar'
   .chat
-    .header
-      .left-header
-        .left-header__title
-          name
-        %ul.left-header__members
-          Member:
-          %li.member
-            ユーザー
-      .right-header
-        Edit
+    = render partial: 'chat_header'
     .messages
       = render partial: 'message', collection: @messages
-    .form
-      = form_for [@group, @message] do |f|
-        = f.text_field :body, class: 'form__message', placeholder: 'type a message'
-        .form__picture
-          = f.label :image, class: 'form__picture__image' do
-            = fa_icon 'picture-o', class: 'icon'
-            = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'form__submit'
+    = render partial: 'message_form'
