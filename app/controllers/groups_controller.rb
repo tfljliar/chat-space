@@ -17,7 +17,6 @@ class GroupsController < ApplicationController
     end
   end
 
-  private
   def group_params
     params.require(:group).permit(:name, { :user_ids => []})
   end
@@ -39,6 +38,6 @@ class GroupsController < ApplicationController
   end
 
   def set_group
-    @group = Group.find(prams[:id])
+    @group = Group.find(params[:id])
   end
 end
